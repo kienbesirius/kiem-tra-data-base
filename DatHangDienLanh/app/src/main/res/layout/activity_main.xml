@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="machine"
+            type="com.fetchmefun.kiemtra.Machine" />
+        <variable
+            name="clickHandlers"
+            type="com.fetchmefun.kiemtra.MainActivity.MainActivityClickHandlers" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/tv_label_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đặt Hàng Điện Lạnh"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_label_typemachine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loại Thiết Bị"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_label_main" />
+
+        <RadioGroup
+            android:id="@+id/radio_group_typemachine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_label_typemachine"
+            app:layout_constraintTop_toTopOf="@+id/tv_label_typemachine">
+
+            <RadioButton
+                android:id="@+id/radio_maygiat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Máy giặt" />
+
+            <RadioButton
+                android:id="@+id/radio_tulanh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tủ Lạnh" />
+
+            <RadioButton
+                android:id="@+id/radio_dieuhoa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Điều Hòa" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tv_hang_san_xuat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hãng Sản Xuất"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radio_group_typemachine" />
+
+        <EditText
+            android:id="@+id/edt_hang_san_xuat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Panasonic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_hang_san_xuat"
+            app:layout_constraintTop_toBottomOf="@+id/radio_group_typemachine" />
+
+        <TextView
+            android:id="@+id/tv_ma_may"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mã Máy"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_hang_san_xuat" />
+
+        <EditText
+            android:id="@+id/edt_ma_may"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="DH001"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_hang_san_xuat"
+            app:layout_constraintTop_toBottomOf="@+id/edt_hang_san_xuat" />
+
+        <TextView
+            android:id="@+id/tv_hang_so_luong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số Lượng"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_ma_may" />
+
+        <EditText
+            android:id="@+id/edt_so_luong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="04"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_hang_san_xuat"
+            app:layout_constraintTop_toBottomOf="@+id/edt_ma_may" />
+
+        <TextView
+            android:id="@+id/tv_label_thanh_toan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loại Thiết Bị"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_so_luong" />
+
+        <RadioGroup
+            android:id="@+id/radio_group_thanh_toan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_label_typemachine"
+            app:layout_constraintTop_toBottomOf="@+id/edt_so_luong">
+
+            <RadioButton
+                android:id="@+id/radio_tien_mat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tiền Mặt" />
+
+            <RadioButton
+                android:id="@+id/radio_chuyen_khoan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chuyển Khoản" />
+
+            <RadioButton
+                android:id="@+id/radio_the_tin_dung"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thẻ Tín Dụng" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tv_label_giamgia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giảm giá (Y/N)"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radio_group_thanh_toan" />
+
+        <CheckBox
+            android:id="@+id/checkbox_voucher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voucher"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_label_giamgia"
+            app:layout_constraintTop_toBottomOf="@+id/radio_group_thanh_toan" />
+
+        <Button
+            android:id="@+id/btn_insert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nhập Liệu/Hiển Thị"
+            android:onClick="@{clickHandlers::onClickBtnInsert}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_refill"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkbox_voucher" />
+
+        <Button
+            android:id="@+id/btn_refill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nhập Lại"
+            android:onClick="@{clickHandlers::onClickBtnRefill}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_insert"
+            app:layout_constraintTop_toBottomOf="@+id/checkbox_voucher" />
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

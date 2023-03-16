@@ -61,16 +61,30 @@ public class MainActivity extends AppCompatActivity {
                     payment.getText().toString(),
                     mBindingMain.checkboxVoucher.isChecked()
             );
-            machineDatabase.getMachineDAO().insert(machine);
-            startActivity(new Intent(MainActivity.this, MainActivity2.class));
+            try{
+                machineDatabase.getMachineDAO().insert(machine);
+                startActivity(new Intent(MainActivity.this, MainActivity2.class));
+            }catch (Exception e){
+                Toast.makeText(MainActivity.this, "Dữ liệu đã tồn tại", Toast.LENGTH_SHORT).show();
+            }
         }
         public void onClickBtnRefill(View view){
-            mBindingMain.edtHangSanXuat.setText("");
-            mBindingMain.edtMaMay.setText("");
-            mBindingMain.edtSoLuong.setText("");
-            mBindingMain.checkboxVoucher.setChecked(false);
-            typeMachine.setChecked(false);
-            payment.setChecked(false);
+            if(mBindingMain.edtMaMay.getText().toString().contains(" ")){
+                String s = mBindingMain.edtMaMay.getText().toString();
+                Toast.makeText(MainActivity.this, "Mã máy không chứ dấu cách", Toast.LENGTH_SHORT).show();
+                mBindingMain.edtMaMay.setText(s.replaceAll(" ",""));
+            }
+            if(mBindingMain.edtSoLuong.getText().toString().contains(".")){
+                String s = mBindingMain.edtSoLuong.getText().toString();
+                Toast.makeText(MainActivity.this, "Số lượng không hợp lệ", Toast.LENGTH_SHORT).show();
+                mBindingMain.edtSoLuong.setText(s.replaceAll("\\.",""));
+            }
+//            mBindingMain.edtHangSanXuat.setText("");
+//            mBindingMain.edtMaMay.setText("");
+//            mBindingMain.edtSoLuong.setText("");
+//            mBindingMain.checkboxVoucher.setChecked(false);
+//            typeMachine.setChecked(false);
+//            payment.setChecked(false);
         }
     }
 }

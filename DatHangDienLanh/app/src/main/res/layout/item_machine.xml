@@ -10,35 +10,41 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal">
     <TextView
+        android:layout_weight="1"
         android:id="@+id/machine_type"
         android:text="@{machine.typeMachine}"
         android:padding="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView
+        android:layout_weight="1"
         android:id="@+id/machine_id"
         android:text="@{machine.id}"
         android:padding="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView
+        android:layout_weight="1"
         android:id="@+id/machine_manufacturer"
         android:text="@{machine.manufacturer}"
         android:padding="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView
+        android:layout_weight="1"
         android:id="@+id/machine_quantity"
         android:layout_width="wrap_content"
         android:padding="5dp"
         android:layout_height="wrap_content"/>
     <TextView
+        android:layout_weight="1"
         android:id="@+id/machine_payment"
         android:text="@{machine.payment}"
         android:padding="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView
+        android:layout_weight="1"
         android:id="@+id/machine_voucher"
         android:padding="5dp"
         android:layout_width="wrap_content"
